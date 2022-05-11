@@ -616,8 +616,33 @@ void InitClientPersistant (gclient_t *client)
 
 	client->pers.weapon = item;
 
+	item = FindItem("Craft Oatmeal (Water + Oats)");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+	item = FindItem("Craft Bandage (Alcohol + Cloth)");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+	item = FindItem("Craft Mask (Water + Cloth)");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+	item = FindItem("Craft Antibiotics (Water + Shrooms)");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+	item = FindItem("Craft ??? (Alcohol + Shrooms)");
+	client->pers.selected_item = ITEM_INDEX(item);
+	client->pers.inventory[client->pers.selected_item] = 1;
+
 	client->pers.health			= 100;
 	client->pers.max_health		= 100;
+
+	client->pers.infection = 0;
+	client->pers.max_infection = 100;
+
+	client->pers.thirst = 10;
+	client->pers.max_thirst = 100;
+
+	client->pers.hunger = 20;
+	client->pers.max_hunger = 100;
 
 	client->pers.max_bullets	= 200;
 	client->pers.max_shells		= 100;
